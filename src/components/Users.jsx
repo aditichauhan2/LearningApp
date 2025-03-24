@@ -110,7 +110,7 @@ export default function UsersTab() {
   const [users, setUsers] = useState(usersData);
   const [showDeleteDetails, setShowDeleteDetails] = useState(false);
   const [userToDelete, setUserToDelete] = useState(null);
-  const [showDetailDetails, setShowDetailDetails] = useState(false);
+  const [showUserDetails, setShowUserDetails] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
   const handleDelete = (username) => {
@@ -233,7 +233,7 @@ export default function UsersTab() {
                       className="text-gray-500 hover:text-blue-500"
                       onClick={() => {
                         setSelectedUser(user);
-                        setShowDetailDetails(true);
+                        setShowUserDetails(true);
                       }}
                     >
                       <i className="bx bx-show"></i>
@@ -279,7 +279,7 @@ export default function UsersTab() {
       )}
 
       {/* User Details */}
-      {showDetailDetails && (
+      {showUserDetails && (
         <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-8 rounded-lg shadow-md w-1/3 max-w-3xl">
             <h3 className="text-xl font-semibold text-gray-800 mb-4">User Details</h3>
@@ -317,7 +317,7 @@ export default function UsersTab() {
             </div>
             <div className="flex justify-center space-x-4 mt-6">
               <button
-                onClick={() => setShowDetailDetails(false)}
+                onClick={() => setShowUserDetails(false)}
                 className="bg-indigo-200 text-indigo-600 px-6 py-2 rounded-md hover:bg-indigo-400 transition"
               >
                 OK
